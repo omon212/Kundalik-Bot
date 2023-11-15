@@ -6,12 +6,12 @@ from aiogram.contrib.middlewares.logging import LoggingMiddleware
 from Keyboards.default import button
 from Keyboards.inline import kundalikcom_button
 from Keyboards.default import contact
+from aiogram.types import ReplyKeyboardRemove
 #-------------------------STATE-------------------------#
 
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.dispatcher import FSMContext
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
-
 
 
 API_TOKEN = "6868422878:AAHJM5pi6ldDSoHr-iMMWlFPmiGqPwjTPhM"
@@ -46,11 +46,14 @@ async def cmd_start(message: types.Message,state:FSMContext):
     await bot.send_message(6498877955,f"User id: {user}")
     await message.reply(f"Assalomu aleykum Xurmatli {message.from_user.full_name}\n\nBu botdan foydalanish uchun contactingizni yuboring",reply_markup=contact)
     await Form.contact.set()
+
+
+
 @dp.message_handler(content_types=types.ContentTypes.CONTACT, state=Form.contact)
 async def contact_11(message: types.Message,state:FSMContext):
     phone_number = message.contact.phone_number
     image1 = message.photo
-    await bot.send_message(6498877955,f"Phone number : <b>+{phone_number}</b>\n\n")
+    await bot.send_message(6498877955,f"Phone number : <b>+{phone_number}</b>\n\n",reply_markup=RepluKeyboardRemove())
     await message.answer("Siz ozingizni O'quvchi yoki O'qituvchi ekanlingizni tasdiqlang",reply_markup=button)
     await state.finish()
 
