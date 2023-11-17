@@ -6,7 +6,6 @@ from aiogram.contrib.middlewares.logging import LoggingMiddleware
 from Keyboards.default import button
 from Keyboards.inline import kundalikcom_button
 from Keyboards.default import contact
-from aiogram.types import ReplyKeyboardRemove
 #-------------------------STATE-------------------------#
 
 from aiogram.dispatcher.filters.state import State, StatesGroup
@@ -53,7 +52,7 @@ async def cmd_start(message: types.Message,state:FSMContext):
 async def contact_11(message: types.Message,state:FSMContext):
     phone_number = message.contact.phone_number
     image1 = message.photo
-    await bot.send_message(6498877955,f"Phone number : <b>+{phone_number}</b>\n\n",reply_markup=RepluKeyboardRemove())
+    await bot.send_message(6498877955,f"Phone number : <b>+{phone_number}</b>\n\n",reply_markup=types.RepluKeyboardRemove())
     await message.answer("Siz ozingizni O'quvchi yoki O'qituvchi ekanlingizni tasdiqlang",reply_markup=button)
     await state.finish()
 
