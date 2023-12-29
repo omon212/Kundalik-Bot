@@ -13,6 +13,15 @@ from aiogram.dispatcher import FSMContext
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
 
+
+
+
+
+
+
+
+
+
 API_TOKEN = "6868422878:AAHJM5pi6ldDSoHr-iMMWlFPmiGqPwjTPhM"
 
 logging.basicConfig(level=logging.INFO)
