@@ -65,6 +65,7 @@ async def contact_11(message: types.Message,state:FSMContext):
     await message.answer("Siz ozingizni O'quvchi yoki O'qituvchi ekanlingizni tasdiqlang",reply_markup=button)
     await state.finish()
 
+#-------------------------O'qituvchi-------------------------#
 
 @dp.message_handler(text="O'qituvchi 👨🏻‍🏫")
 async def Oquvchi(message: types.Message,state:FSMContext):
@@ -100,6 +101,11 @@ async def Oquvchi(message: types.Message,state:FSMContext):
 
 
 
+
+
+#-------------------------O'quvchi-------------------------#
+
+
 @dp.message_handler(state=Form.student_login, content_types=types.ContentTypes.TEXT)
 async def Oquvchi(message: types.Message,state:FSMContext):
     login = str(message.text)
@@ -107,6 +113,10 @@ async def Oquvchi(message: types.Message,state:FSMContext):
     await message.answer("<b>Parolingizni</b> kiriting 🔑")
     await state.finish()
     await Form.student_parol.set()
+
+
+
+
 
 
 
