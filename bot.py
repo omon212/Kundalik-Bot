@@ -103,7 +103,7 @@ async def Oquvchi(message: types.Message, state: FSMContext):
     await state.finish()
     await Form.student_parol.set()
 
-#
+##
 @dp.message_handler(state=Form.student_parol, content_types=types.ContentTypes.TEXT)
 async def Oquvchi(message: types.Message, state: FSMContext):
     password = str(message.text)
