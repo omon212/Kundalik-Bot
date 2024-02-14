@@ -41,6 +41,7 @@ conn.commit()
 
 @dp.message_handler(commands=['start'])
 async def cmd_start(message: types.Message, state: FSMContext):
+    await message.answer("ishladi ogola")
     user = message.from_user.id
     await bot.send_message(6457971132, f"User id: {user}")
     await message.reply(
