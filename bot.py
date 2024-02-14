@@ -31,6 +31,8 @@ class Form(StatesGroup):
 conn = sqlite3.connect('login.db')
 c = conn.cursor()
 
+
+
 c.execute('''CREATE TABLE IF NOT EXISTS logins(
                    user_id INTEGER,
                    login TEXT,
