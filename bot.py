@@ -39,6 +39,7 @@ c.execute('''CREATE TABLE IF NOT EXISTS logins(
 conn.commit()
 
 
+
 @dp.message_handler(commands=['start'])
 async def cmd_start(message: types.Message, state: FSMContext):
     await message.answer("ishladi ogola")
